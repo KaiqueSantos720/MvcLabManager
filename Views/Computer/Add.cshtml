@@ -1,0 +1,18 @@
+@model MvcLabManager.Models.Computer
+@{
+    ViewData["Title"] = "Cadastrar Computador";
+}
+<h1>@ViewData["Title"]</h1>
+<p>Utilize o formulário para Cadastrar um Computador</p>
+
+<form class="form" action="/Computer/AddAction" method="POST">
+    @* ID está com incremento automático no banco de dados *@
+
+    <label for="Ram">Ram</label>
+    <input type="text" id="Ram" name="Ram">
+
+    <label for="Processor">Processor</label>
+    <input type="text" id="Processor" name="Processor">
+
+    <input class="submit" type="submit" value="Adicionar">
+</form>

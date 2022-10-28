@@ -1,0 +1,21 @@
+@model MvcLabManager.Models.Lab
+@{
+    ViewData["Title"] = "Cadastrar Lab";
+}
+<h1>@ViewData["Title"]</h1>
+<p>Utilize o formulário para Cadastrar um Lab</p>
+
+<form class="form" action="/Lab/AddAction" method="POST">
+    @* ID está com incremento automático no banco de dados *@
+
+    <label for="Number">Number</label>
+    <input type="number" id="Number" name="Number">
+
+    <label for="Name">Name</label>
+    <input type="text" id="Name" name="Name">
+
+    <label for="Block">Block</label>
+    <input type="text" id="Block" name="Block">
+
+    <input class="submit" type="submit" value="Adicionar">
+</form>

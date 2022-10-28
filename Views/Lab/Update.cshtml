@@ -1,0 +1,22 @@
+@model MvcLabManager.Models.Lab
+@{
+    ViewData["Title"] = "Atualizar Lab";
+}
+<h1>@ViewData["Title"]</h1>
+
+<p>Utilize o formulário para Atualizar o lab</p>
+
+<form class="form" action="/Lab/UpdateAction/@Model.Id" method="POST">
+    @* Não pode alterar o ID *@
+
+    <label for="Number">Number</label>
+    <input value="@Model.Number" type="number" id="Number" name="Number">
+
+    <label for="Name">Name</label>
+    <input value="@Model.Name" type="text" id="Name" name="Name">
+
+    <label for="Block">Block</label>
+    <input value="@Model.Block" type="text" id="Block" name="Block">
+
+    <input class="submit" type="submit" value="Atualizar">
+</form>
