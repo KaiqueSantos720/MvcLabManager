@@ -7,7 +7,7 @@
 @if(Model.Count() == 0)
 {
     <p>Nenhum computador cadastrado</p>
-    <a class="btn btn-outline-dark" href="/Computer/Add">Cadastre um novo Computador</a>
+    <a class="btn btn-outline-dark" asp-controller="Computer" asp-action="Add">Cadastre um novo Computador</a>
 }
 else
 {
@@ -28,13 +28,13 @@ else
                     <td>@computer.Ram</td>
                     <td>@computer.Processor</td>
                     <td>
-                        <a class="btn btn-outline-info" href="/Computer/Show/@computer.Id">Ver</a>
-                        <a class="btn btn-outline-light" href="/Computer/Update/@computer.Id">Update</a>
-                        <a class="btn btn-outline-danger" href="/Computer/Delete/@computer.Id">Delete</a>
+                        <a class="btn btn-outline-info" asp-controller="Computer" asp-action="Show" asp-route-id="@computer.Id">Ver</a>
+                        <a class="btn btn-outline-light" asp-controller="Computer" asp-action="Update" asp-route-id="@computer.Id">Update</a>
+                        <a class="btn btn-outline-danger" asp-controller="Computer" asp-action="Delete" asp-route-id="@computer.Id">Delete</a>
                     </td>
                 </tr>
             }
         </tbody>
     </table>
-    <a class="btn btn-outline-dark" href="/Computer/Add">Cadastre um novo Computador</a>
+    <a class="btn btn-outline-dark" asp-controller="Computer" asp-action="Add">Cadastre um novo Computador</a>
 }

@@ -6,7 +6,7 @@
 
 <p>Utilize o formulário para Atualizar o computador</p>
 
-<form class="form" action="/Computer/UpdateAction/@Model.Id" method="POST">
+<form class="form" asp-controller="Computer" asp-action="UpdateAction" asp-route-id="@Model.Id" method="POST">
     @* Não pode alterar o ID *@
     
     <label for="Ram">Ram</label>

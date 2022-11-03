@@ -6,7 +6,7 @@
 
 <p>Utilize o formulário para Atualizar o lab</p>
 
-<form class="form" action="/Lab/UpdateAction/@Model.Id" method="POST">
+<form class="form" asp-controller="Lab" asp-action="UpdateAction" asp-route-id="@Model.Id" method="POST">
     @* Não pode alterar o ID *@
 
     <label for="Number">Number</label>

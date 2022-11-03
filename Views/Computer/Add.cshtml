@@ -5,7 +5,7 @@
 <h1>@ViewData["Title"]</h1>
 <p>Utilize o formulário para Cadastrar um Computador</p>
 
-<form class="form" action="/Computer/AddAction" method="POST">
+<form class="form" asp-controller="Computer" asp-action="AddAction" method="POST">
     @* ID está com incremento automático no banco de dados *@
 
     <label for="Ram">Ram</label>
