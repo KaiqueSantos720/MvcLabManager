@@ -29,11 +29,13 @@ public class ComputerController : Controller
         return View(computer);
     }
 
+    [HttpGet]
     public IActionResult Add()
     {
         return View();
     }
 
+    [HttpGet]
     public IActionResult Update(int id)
     {
         Computer computer = _context.Computers.Find(id);
@@ -61,7 +63,8 @@ public class ComputerController : Controller
         return RedirectToAction("Index");
     }
 
-    public IActionResult AddAction(Computer pc)
+    [HttpPost]
+    public IActionResult Add(Computer pc)
     {
         _context.Computers.Add(pc);
         _context.SaveChanges();
@@ -69,7 +72,8 @@ public class ComputerController : Controller
         return RedirectToAction("Index");
     }
 
-    public IActionResult UpdateAction(Computer pc, int id)
+    [HttpPost]
+    public IActionResult Update(Computer pc, int id)
     {
         Computer updateComputer = _context.Computers.Find(pc.Id);
         

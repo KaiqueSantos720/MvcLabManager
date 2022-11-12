@@ -29,11 +29,13 @@ public class LabController : Controller
         return View(lab);
     }
 
+    [HttpGet]
     public IActionResult Add()
     {
         return View();
     }
 
+    [HttpGet]
     public IActionResult Update(int id)
     {
         Lab lab = _context.Labs.Find(id);
@@ -61,7 +63,8 @@ public class LabController : Controller
         return RedirectToAction("Index");
     }
 
-    public IActionResult AddAction(Lab lab)
+    [HttpPost]
+    public IActionResult Add(Lab lab)
     {
         _context.Labs.Add(lab);
         _context.SaveChanges();
@@ -69,7 +72,8 @@ public class LabController : Controller
         return RedirectToAction("Index");
     }
 
-    public IActionResult UpdateAction(Lab lab, int id)
+    [HttpPost]
+    public IActionResult Update(Lab lab, int id)
     {
         Lab updateLab = _context.Labs.Find(lab.Id);
         
