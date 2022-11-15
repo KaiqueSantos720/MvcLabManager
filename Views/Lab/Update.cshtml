@@ -10,13 +10,16 @@
     @* Não pode alterar o ID *@
 
     <label for="Number">Number</label>
-    <input value="@Model.Number" type="number" id="Number" name="Number">
+    <input value="@Model.Number" type="number" id="Number" name="Number" asp-for="@Model.Number">
+    <span asp-validation-for="@Model.Number" class="text-danger"></span>
 
     <label for="Name">Name</label>
-    <input value="@Model.Name" type="text" id="Name" name="Name">
+    <input value="@Model.Name" type="text" id="Name" name="Name" asp-for="@Model.Name">
+    <span asp-validation-for="@Model.Name" class="text-danger"></span>
 
     <label for="Block">Block</label>
-    <input value="@Model.Block" type="text" id="Block" name="Block">
+    <input value="@Model.Block" type="text" id="Block" name="Block" asp-for="@Model.Block">
+    <span asp-validation-for="@Model.Block" class="text-danger"></span>
 
     <input class="submit" type="submit" value="Atualizar">
 </form>

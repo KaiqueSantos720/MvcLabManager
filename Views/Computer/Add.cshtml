@@ -9,10 +9,12 @@
     @* ID está com incremento automático no banco de dados *@
 
     <label for="Ram">Ram</label>
-    <input type="text" id="Ram" name="Ram">
+    <input type="text" id="Ram" name="Ram" asp-for="@Model.Ram">
+    <span asp-validation-for="@Model.Ram" class="text-danger"></span>
 
     <label for="Processor">Processor</label>
-    <input type="text" id="Processor" name="Processor">
+    <input type="text" id="Processor" name="Processor" asp-for="@Model.Processor">
+    <span asp-validation-for="@Model.Processor" class="text-danger"></span>
 
     <input class="submit" type="submit" value="Adicionar">
 </form>

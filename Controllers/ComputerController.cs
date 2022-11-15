@@ -66,6 +66,11 @@ public class ComputerController : Controller
     [HttpPost]
     public IActionResult Add(Computer pc)
     {
+        if(!ModelState.IsValid) 
+        {
+            return View(pc);
+        }
+
         _context.Computers.Add(pc);
         _context.SaveChanges();
 
@@ -75,6 +80,11 @@ public class ComputerController : Controller
     [HttpPost]
     public IActionResult Update(Computer pc, int id)
     {
+        if(!ModelState.IsValid) 
+        {
+            return View(pc);
+        }
+
         Computer updateComputer = _context.Computers.Find(pc.Id);
         
         updateComputer.Ram = pc.Ram;
